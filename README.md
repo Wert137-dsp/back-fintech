@@ -66,7 +66,6 @@ USUÁRIO
       "email": "diego@gmail.com"
     }
   }
-- Observação: a API NÃO utiliza JWT. Se houver mecanismo de sessão/cookie, documentar separadamente.
 
 3) Excluir Usuário
 - Método / Rota: ❌ DELETE /usuario/{usuarioId}/excluir  
@@ -74,8 +73,6 @@ USUÁRIO
 - Headers: (se aplicável, p.ex. cookie de sessão)  
 - Modelo de retorno 🔁:
   204 No Content  (ou)
-  200 OK
-  { "message": "Usuário removido" }
 
 ────────────────────────────────────────────────────────────
 GASTOS
@@ -114,7 +111,7 @@ GASTOS
 - Método / Rota: ❌ DELETE /usuario/{usuarioId}/gastos/{gastoId}/excluir  
 - Ex.: `DELETE /usuario/6/gastos/11/excluir`  
 - Modelo de retorno 🔁:
-  204 No Content  (ou) { "message": "Gasto removido" }
+  204 No Content
 
 3) Buscar Todos os Gastos
 - Método / Rota: 🔹 GET /usuario/{usuarioId}/gastos/todos  
