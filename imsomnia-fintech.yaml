@@ -1,0 +1,383 @@
+type: collection.insomnia.rest/5.0
+name: Fintech
+meta:
+  id: wrk_7abd72263eef4d1fab7a730e31d29e37
+  created: 1761775872021
+  modified: 1761775872021
+collection:
+  - name: Usuário
+    meta:
+      id: fld_eac18e851c2c4bec8a047defbc2ead89
+      created: 1761776901663
+      modified: 1761787186723
+      sortKey: -1761776901663
+    children:
+      - url: "{{ _.fintech_url }}/usuario"
+        name: Criar Usuário
+        meta:
+          id: req_ce713c0dc96641c689797aa176e13887
+          created: 1761775947102
+          modified: 1761873977549
+          isPrivate: false
+          sortKey: -1761776909110
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome" : "Diego 123",
+            	"email" : "diego123@gmail.com",
+            	"senha": "12345678",
+            	"dataNascimento": "2000-03-27"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/login"
+        name: Login
+        meta:
+          id: req_170c46aa847e423aa5cdc58516f97a56
+          created: 1761776692587
+          modified: 1761873845998
+          isPrivate: false
+          sortKey: -1761776909210
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "diego@gmail.com",
+            	"senha": "12345678"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/5/excluir"
+        name: Excluir Usuário
+        meta:
+          id: req_7e09638d7e39497497f9b072f7502fb6
+          created: 1761776926521
+          modified: 1761787473036
+          isPrivate: false
+          sortKey: -1761776909010
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Gastos
+    meta:
+      id: fld_58c94dc1f4384de68d7612f5fbb7d945
+      created: 1761777009812
+      modified: 1761874478196
+      sortKey: -1761777009812
+    children:
+      - url: "{{ _.fintech_url }}/usuario/6/gastos"
+        name: Adicionar Gasto
+        meta:
+          id: req_379543a85e994cddb7d78e7d5c2967b0
+          created: 1761783769118
+          modified: 1761873895427
+          isPrivate: false
+          sortKey: -1761783769118
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	
+            	"nome": "Viagem para a França",
+            	"tipo": "Eventual",
+            	"valor": 2000,
+            	"dataGasto": "2026-01-20"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/gastos/11/excluir"
+        name: Excluir Gasto
+        meta:
+          id: req_11974499a8564f26b422d50ef964ccc2
+          created: 1761787003121
+          modified: 1761874056308
+          isPrivate: false
+          sortKey: -1761787003121
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/gastos/todos"
+        name: Buscar Todos
+        meta:
+          id: req_e00ec86fe72945b6bbd1d695f967dd88
+          created: 1761787601669
+          modified: 1761873925719
+          isPrivate: false
+          sortKey: -1761787601669
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/gastos/11"
+        name: Buscar Gasto
+        meta:
+          id: req_a5d1f303c6cd4b168ea0abad69acb64b
+          created: 1761787622994
+          modified: 1761874023027
+          isPrivate: false
+          sortKey: -1761787622994
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/gastos/9/atualizar"
+        name: Atualizar Gasto
+        meta:
+          id: req_2890a6eb52d145278dd67f3a9b9699ff
+          created: 1761787630435
+          modified: 1761874046779
+          isPrivate: false
+          sortKey: -1761787630435
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome" : "Viagem pra Istambul",
+            	"tipo": "Eventual",
+            	"valor": 3500,
+            	"dataGasto": "2026-12-20"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Contas
+    meta:
+      id: fld_00ec9fd7c79147a7bc7657c66c4b6cfb
+      created: 1761777014864
+      modified: 1761874450399
+      sortKey: -1761777014864
+    children:
+      - url: "{{ _.fintech_url }}/usuario/6/contas"
+        name: Adicionar Conta
+        meta:
+          id: req_a35c5314501648ce80380c94a8151c31
+          created: 1761787930675
+          modified: 1761874401811
+          isPrivate: false
+          sortKey: -1761787930675
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"numeroAgencia": "123",
+            	"numeroConta": "1212132323",
+            	"tipoConta": "Corrente",
+            	"saldoAtual": 4500,
+            	"dataAbertura": "2020-04-20"
+            	
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/contas/2/excluir"
+        name: Excluir Conta
+        meta:
+          id: req_a45aebecba8b4f9eb0b4f89b82dae7c9
+          created: 1761788035857
+          modified: 1761874417109
+          isPrivate: false
+          sortKey: -1761788035857
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/contas/1"
+        name: Buscar Conta
+        meta:
+          id: req_c1df73990bad410abbf57db0c7dd050b
+          created: 1761874248136
+          modified: 1761874403160
+          isPrivate: false
+          sortKey: -1761788035957
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/contas/todas"
+        name: Buscar todas
+        meta:
+          id: req_f45e36e5892041a5a2bafb2e21e65c44
+          created: 1761874279025
+          modified: 1761874310061
+          isPrivate: false
+          sortKey: -1761788036057
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.fintech_url }}/usuario/6/contas/1/atualizar"
+        name: Atualizar Conta
+        meta:
+          id: req_e9c778dd5e604ec5ac0f0f59d7025f35
+          created: 1761874317982
+          modified: 1761874376032
+          isPrivate: false
+          sortKey: -1761788036157
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	
+            	"numeroAgencia": "123",
+            	"numeroConta": "1212132323",
+            	"tipoConta": "Corrente",
+            	"saldoAtual": 5500,
+            	"dataAbertura": "2020-04-20"
+            	
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c65dc132dc9f0ed13fabecad5cf4f583688613ac
+    created: 1761775872048
+    modified: 1761775872048
+environments:
+  name: Base Environment
+  meta:
+    id: env_c65dc132dc9f0ed13fabecad5cf4f583688613ac
+    created: 1761775872039
+    modified: 1761775996844
+    isPrivate: false
+  subEnvironments:
+    - name: New Environment
+      meta:
+        id: env_5ac324452eb94ce39c96234703b27e0e
+        created: 1761775991345
+        modified: 1761776960114
+        isPrivate: false
+        sortKey: 1761775991345
+      data:
+        fintech_url: http://localhost:8080/api/v1
+      color: "#1dcb06"
